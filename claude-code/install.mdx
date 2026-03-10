@@ -7,9 +7,7 @@ description: "从扩展市场安装 Claude Code 插件并完成登录验证"
 
 <Steps>
   <Step title="打开扩展市场">
-    点击左侧边栏的**四个小方块图标**（Extensions），或使用快捷键：
-    - **Mac**：`Cmd + Shift + X`
-    - **Windows**：`Ctrl + Shift + X`
+    点击左侧边栏的**四个小方块图标**（Extensions）
   </Step>
   <Step title="搜索插件">
     在搜索框输入 **Claude Code**
@@ -22,26 +20,112 @@ description: "从扩展市场安装 Claude Code 插件并完成登录验证"
   </Step>
 </Steps>
 
-## 登录与验证
+<Frame>
+  ![Image](/images/image-9.png)
+</Frame>
 
-安装完成后，需要登录你的 Claude 账号：
+## 配置模型 API
 
-<Steps>
-  <Step title="打开 Claude 面板">
-    侧边栏会出现一个 **Claude 图标**（星形图标），点击打开对话面板。
+1. 安装完成后，需要配置大模型 API 才可以进行使用：
 
-    如果面板没出现，可以打开命令面板（`Cmd+Shift+P` / `Ctrl+Shift+P`），输入 "Claude Code"，选择 **Open in New Tab** 或 **Open in Sidebar**。
-  </Step>
-  <Step title="登录账号">
-    首次使用会提示登录——点击 `Sign in`，按提示在弹出的浏览器页面完成授权。
-  </Step>
-  <Step title="测试连接">
-    回到 VS Code，发一条测试消息（比如"你好"），收到回复说明安装成功。
-  </Step>
-</Steps>
+> 国内大模型平台可以选择使用 **千问 Qwen、智谱GLM**、**Kimi**、**MiniMax** 等，都有订阅制的套餐，首月会有一些新人福利
+
+智谱：[智谱AI开放平台](https://bigmodel.cn/glm-coding?utm_source=bigModel&utm_medium=Special&utm_content=glm-code&utm_campaign=Platform_Ops&_channel_track_key=8BAeCdUS)
+
+Kimi：[Moonshot AI 开放平台 - Kimi 大模型 API 服务](https://platform.moonshot.cn/console/api-keys)
+
+MiniMax：[Coding Plan - MiniMax API 平台](https://platform.minimaxi.com/subscribe/coding-plan)
+
+千问：[百炼Coding Plan](https://common-buy.aliyun.com/?commodityCode=sfm_codingplan_public_cn)
 
 <Tip>
-  底部状态栏也会出现 "Claude Code" 字样，点击它同样可以打开对话面板。
+  为了统一管理，我们选择 CC Switch 作为 Claude Code 的模型管理工具
+</Tip>
+
+**怎么安装 CC Switch？**
+
+中文介绍地址：
+
+https://github.com/farion1231/cc-switch/blob/main/README_ZH.md
+
+按照指引可以顺畅安装。
+
+<Frame>
+  ![18a06feb7d6367d79296ca5b1da0eeb9](/images/18a06feb7d6367d79296ca5b1da0eeb9.png)
+</Frame>
+
+安装好之后打开
+
+<Frame>
+  ![Image](/images/image-15.png)
+</Frame>
+
+- 接下来，把模型通过 CC Switch 配置到 Claude Code 中
+
+进入 MiniMax 的订阅页面
+
+https://platform.minimaxi.com/subscribe/coding-plan
+
+<Frame>
+  ![Image](/images/image-16.png)
+</Frame>
+
+到账户管理界面创建一个 API Key
+
+<Frame>
+  ![Image](/images/image-19.png)
+</Frame>
+
+- 在 CCS 中导入订阅
+
+<Frame>
+  ![431a9685bf3832442984bcca94e46943](/images/431a9685bf3832442984bcca94e46943.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-20.png)
+</Frame>
+
+将 API Key 黏贴到红框中，选择右下角 “+添加”
+
+<Frame>
+  ![Image](/images/image-21.png)
+</Frame>
+
+回到主页，启用刚刚添加的渠道
+
+<Frame>
+  ![Image](/images/image-22.png)
+</Frame>
+
+## 方法二
+
+### 打开/创建：`~/.claude/settings.json`
+
+```text
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "替换为下面的API Key",
+    "ANTHROPIC_BASE_URL": "https://dm-fox.rjj.cc/claude/droid",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": 1，
+    "ANTHROPIC_MODEL": "claude-sonnet-4-6",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6"
+  },
+  "permissions": {
+    "allow": [],
+    "deny": []
+  }
+}
+```
+
+> **可用这个 key👇 来试用 ClaudeCode，默认模型 Claude Sonnet-4.6**
+
+```text
+sk-ant-oat01-NfWnwCd2kuYXUYiuDefqDktRluwXNeS1o5v7o211ALQcMNXftCSIWplY5f-ZJqGiO3c62ISBq569_QX96cufN4X_eFYeTAA
+```
+
+<Tip>
+  回到 VS Code，发一条测试消息（比如"你好"），收到回复说明配置成功。
 </Tip>
 
 ## 打开 Claude 面板的三种方式
@@ -50,19 +134,20 @@ description: "从扩展市场安装 Claude Code 插件并完成登录验证"
 
 <Tabs>
   <Tab title="方式一：右上角图标">
-    安装完成后，VS Code 主界面的**右上角**会出现 Claude Code 的图标，点击即可打开。
+    打开 Claude 的最快方式是点击**编辑器工具栏**（编辑器右上角）中的 Spark 图标。当你打开文件时，该图标才会出现。
 
-    打开后 Claude 会以**标签页**的形式显示在编辑区。如果你觉得标签页太小，可以用鼠标**拖动标签页**到你想要的位置，比如拖到编辑区让它全屏显示。
+    <Frame>
+      ![Image](/images/image-13.png)
+    </Frame>
   </Tab>
   <Tab title="方式二：侧边栏">
-    点击左侧边栏的 **Claude 图标**（星形图标），Claude 面板会在侧边栏中打开。
+    点击右上角侧边栏的按钮，可以看到 CLAUDE CODE ，点击即可打开侧边栏claude code。
 
     这种方式适合一边看文件、一边和 Claude 对话的场景。
-  </Tab>
-  <Tab title="方式三：命令面板">
-    打开命令面板（`Cmd+Shift+P` / `Ctrl+Shift+P`），输入 "Claude Code"，选择：
-    - **Open in New Tab**：在新标签页中打开（更大的对话空间）
-    - **Open in Sidebar**：在侧边栏中打开（方便同时查看文件）
+
+    <Frame>
+      ![Image](/images/image-11.png)
+    </Frame>
   </Tab>
 </Tabs>
 
@@ -70,26 +155,13 @@ description: "从扩展市场安装 Claude Code 插件并完成登录验证"
 
 Claude Code 有不同的权限模式，控制 Claude 在操作文件时是否需要你手动确认：
 
-| 模式 | 说明 | 适合谁 |
-|------|------|--------|
-| **默认模式** | Claude 每次修改文件前都会询问你确认 | 新手推荐，每一步都在掌控中 |
-| **Auto-accept 模式** | Claude 的修改会自动生效，不需要逐条确认 | 熟练后使用，效率更高 |
+| 模式                 | 说明                      | 适合谁           |
+| ------------------ | ----------------------- | ------------- |
+| **默认模式**           | Claude 每次修改文件前都会询问你确认   | 新手推荐，每一步都在掌控中 |
+| **Auto-accept 模式** | Claude 的修改会自动生效，不需要逐条确认 | 熟练后使用，效率更高    |
 
 切换方式：在 Claude 对话面板中按 `Shift + Tab` 可以快速切换权限模式。
 
 <Info>
   **新手建议**：刚开始使用时保持默认模式，让 Claude 每次修改都征求你的同意。等你熟悉了 Claude 的工作方式、对它的输出质量有信心之后，再考虑切换到 Auto-accept 模式提升效率。
 </Info>
-
-## 安装验证清单
-
-确认以下几项都没问题：
-
-| 检查项 | 预期结果 |
-|--------|---------|
-| 侧边栏有 Claude 图标 | 能看到星形图标 |
-| 点击图标后出现对话面板 | 面板显示输入框 |
-| 发送"你好"能收到回复 | Claude 正常回复中文 |
-| 底部状态栏有 Claude Code | 显示连接状态 |
-
-如果以上任何一项不正常，请参考[常见问题排查](/claude-code/troubleshooting)。

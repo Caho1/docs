@@ -9,6 +9,20 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Claude Code 官方文档",
+          "icon": "book-open-cover",
+          "href": "https://code.claude.com/docs/zh-CN/overview"
+        },
+        {
+          "anchor": "Agent Skills 文档",
+          "icon": "puzzle-piece",
+          "href": "https://platform.claude.com/docs/zh-CN/agents-and-tools/agent-skills/overview"
+        }
+      ]
+    },
     "tabs": [
       {
         "tab": "课程讲义",
@@ -16,16 +30,15 @@
           {
             "group": "开始之前",
             "pages": [
-              "index",
-              "preparation"
+              "index"
             ]
           },
           {
             "group": "1. 认识 VS Code",
             "pages": [
               "vscode/why-vscode",
-              "vscode/claude-code-overview",
-              "vscode/basics"
+              "vscode/basics",
+              "vscode/claude-code-overview"
             ]
           },
           {
@@ -40,7 +53,6 @@
             "group": "3. 业务场景实战",
             "pages": [
               "scenarios/read-docs",
-              "scenarios/write-docs",
               "scenarios/check-docs",
               "scenarios/rewrite",
               "scenarios/data-analysis"
@@ -65,14 +77,12 @@
           {
             "group": "6. 进阶了解",
             "pages": [
-              "advanced/claude-md",
-              "advanced/collaboration"
+              "advanced/claude-md"
             ]
           },
           {
             "group": "7. 练习与答疑",
             "pages": [
-              "practice/exercises",
               "practice/faq"
             ]
           },
@@ -85,21 +95,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Claude Code 官方文档",
-          "href": "https://code.claude.com/docs/zh-CN/overview",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Agent Skills 文档",
-          "href": "https://platform.claude.com/docs/zh-CN/agents-and-tools/agent-skills/overview",
-          "icon": "puzzle-piece"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",

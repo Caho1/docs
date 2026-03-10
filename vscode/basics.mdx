@@ -23,45 +23,27 @@ description: "学会打开文件夹和认识界面的四个关键区域"
   </Step>
 </Steps>
 
-如果你只想打开某个文件：在左侧文件树里点击文件名即可。也可以用快捷搜索找到文件：
-
-- **Mac**：`Cmd + P`
-- **Windows**：`Ctrl + P`
-
 输入文件名的一部分就能快速定位。
 
 ## 认识界面四个关键区域
 
-打开文件夹后，你会看到 VS Code 的主界面。记住这四个区域就够了：
+打开文件夹后，你会看到 VS Code 的主界面。记住这四个区域：
 
-```
-┌──────────────────────────────────────────┐
-│              顶部：菜单栏                  │
-├──────────┬──────────────────┬────────────┤
-│          │                  │            │
-│  左侧：  │   中间：编辑区    │  右侧：    │
-│  文件树   │  （打开的文件     │  Claude    │
-│(Explorer)│   内容显示在这)   │  对话面板  │
-│          │                  │  (安装插件  │
-│          │                  │   后出现)  │
-│          │                  │            │
-├──────────┴──────────────────┴────────────┤
-│           底部：终端 / 输出                 │
-│          （暂时不用关注这里）               │
-└──────────────────────────────────────────┘
-```
+<Frame>
+  ![Image](/images/image-7.png)
+</Frame>
 
 <CardGroup cols={2}>
-  <Card title="左侧：文件树" icon="folder-tree">
+  <Card icon="folder-tree" title="左侧：文件树">
     你所有的文件和文件夹都在这里，点击就能打开对应的文件
   </Card>
-  <Card title="中间：编辑区" icon="file-lines">
+  <Card icon="file-lines" title="中间：编辑区">
     查看和编辑文件内容的地方，打开的文件会以标签页形式显示在顶部
   </Card>
-  <Card title="右侧：Claude 面板" icon="message-bot">
+  <Card icon="message-bot" title="右侧：Claude 面板">
     安装 Claude Code 插件后出现，这是你和 Claude 对话的地方
   </Card>
-  <Card title="底部：终端" icon="terminal">
+  <Card icon="terminal" title="底部：终端">
     暂时不用关注，技术同学会用到这里
   </Card>
 </CardGroup>
