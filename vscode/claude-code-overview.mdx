@@ -1,0 +1,104 @@
+---
+title: "Claude Code 概述"
+description: "了解 Claude Code 是什么、能做什么、在哪里用"
+---
+
+## Claude Code 是什么
+
+> Claude Code 是 Anthropic 官方推出的 AI 代理工具，能读取你的文件、编辑内容、执行任务，并与你的工作工具集成。
+
+用一句大白话来说：**Claude Code 就是一个能直接操作你电脑上文件的 AI 助手**。
+
+和 claude.ai 网页版的区别是——你不需要把内容复制粘贴给它，它自己就能看到你的文件、帮你修改、帮你整理，你只需要告诉它"做什么"。
+
+## 在哪里可以用 Claude Code
+
+Claude Code 不只是一个 VS Code 插件，它可以在多个环境中使用：
+
+| 使用方式 | 说明 | 适合谁 |
+|---------|------|--------|
+| **VS Code 插件** | 在 VS Code 编辑器里直接使用，支持内联差异对比、@ 引用文件、对话历史 | 本课程的主要方式，适合所有人 |
+| **桌面应用** | 独立的应用程序，不需要打开 VS Code，可以直观查看修改差异、同时运行多个会话 | 不想装 VS Code 的用户 |
+| **网页版** | 在浏览器中使用（[claude.ai/code](https://claude.ai/code)），无需安装任何软件，也可以在手机上操作 | 临时使用、移动办公 |
+| **终端 CLI** | 在命令行中使用，功能最完整 | 技术人员 |
+| **JetBrains 插件** | 用于 IntelliJ、PyCharm 等 IDE | 技术人员 |
+
+<Info>
+  **本课程聚焦 VS Code 插件**。对业务人员来说，VS Code 插件是最直观、最容易上手的方式。但你也可以了解一下桌面应用和网页版作为补充。
+</Info>
+
+### 桌面应用（了解即可）
+
+如果你不想在 VS Code 里使用 Claude Code，也可以下载独立的桌面应用：
+
+- **Windows**：从 [官方下载页](https://claude.ai/api/desktop/win32/x64/exe/latest/redirect?utm_source=claude_code&utm_medium=docs) 下载安装
+- **macOS**：从 [官方下载页](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code&utm_medium=docs) 下载安装
+
+安装后，启动应用 → 登录 → 点击「代码」标签即可开始使用。
+
+### 网页版（了解即可）
+
+打开 [claude.ai/code](https://claude.ai/code) 就可以在浏览器中使用 Claude Code，无需安装任何软件。适合临时使用或在手机上操作。
+
+## Claude Code 能做什么
+
+虽然官方文档列出了很多面向开发者的功能，但对业务人员来说，最实用的能力可以归纳为以下几类：
+
+<CardGroup cols={2}>
+  <Card title="读取和理解文件" icon="book-open">
+    Claude 能自动读取你打开的文件夹里的所有文件，理解它们的内容和结构关系。你不需要复制粘贴，只需要告诉它"看哪个文件"。
+  </Card>
+  <Card title="直接修改文件" icon="pen-to-square">
+    Claude 可以直接在文件上做修改，并以**差异对比视图**展示改动——你可以逐条审核，决定接受还是拒绝。
+  </Card>
+  <Card title="跨文件操作" icon="files">
+    Claude 能同时处理多个文件。比如对比两份文档的差异、把一份数据的内容整理到另一份文档里、批量检查一个目录下的所有文件。
+  </Card>
+  <Card title="创建新文件" icon="file-circle-plus">
+    Claude 可以根据你的需求直接创建新文件。比如"帮我根据会议笔记生成一份正式的会议纪要，保存为 meeting-summary.md"。
+  </Card>
+</CardGroup>
+
+### 进阶能力（了解即可）
+
+以下能力在你熟练使用后会更有价值：
+
+<AccordionGroup>
+  <Accordion title="Agent Skills：可复用的工作流模板">
+    把你反复执行的 SOP（比如每周写周报）做成一个"技能包"，之后只需要说一句触发词（如"帮我做周报"），Claude 就自动按流程执行。
+
+    详见[第 5 章：Agent Skills](/skills/overview)。
+  </Accordion>
+  <Accordion title="CLAUDE.md：项目规则文件">
+    一个放在项目文件夹里的规则文件，Claude 每次启动时自动读取。技术同学可以在里面写好项目背景、规则和注意事项，让 Claude 的回答更稳定准确。
+
+    详见[第 6 章：CLAUDE.md](/advanced/claude-md)。
+  </Accordion>
+  <Accordion title="MCP：连接外部工具">
+    通过 MCP（Model Context Protocol），Claude Code 可以连接到你的其他工具——比如读取 Google Drive 里的文档、更新 Jira 中的任务、从 Slack 拉取信息。
+
+    这通常由技术同学来配置，配置好之后你可以直接使用。
+  </Accordion>
+  <Accordion title="多环境无缝切换">
+    Claude Code 的对话和配置可以在不同环境之间共享。比如你在 VS Code 里开始了一个任务，可以在桌面应用或网页版中继续。所有环境连接的是同一个底层引擎。
+  </Accordion>
+</AccordionGroup>
+
+## Claude Code vs claude.ai vs ChatGPT
+
+你可能同时接触了多个 AI 工具，以下是它们的核心区别：
+
+| 能力 | Claude Code | claude.ai 网页版 | ChatGPT |
+|------|------------|-----------------|---------|
+| 聊天问答 | 支持 | 支持 | 支持 |
+| 直接读取本地文件 | 支持 | 不支持（需上传） | 不支持（需上传） |
+| 直接修改本地文件 | 支持（差异对比审核） | 不支持 | 不支持 |
+| 跨文件操作 | 支持 | 不支持 | 不支持 |
+| 项目级上下文 | 理解整个文件夹 | 仅当前对话 | 仅当前对话 |
+| 工作流自动化（Skill） | 支持 | 有限支持 | 不支持 |
+
+<Tip>
+  **简单选择指南**：
+  - 快速提个问、聊个天 → 用 **claude.ai** 或 **ChatGPT**
+  - 处理电脑上的具体文件和文档 → 用 **Claude Code**（本课程教的就是这个）
+</Tip>
