@@ -24,6 +24,7 @@
             "group": "1. 认识 VS Code",
             "pages": [
               "vscode/why-vscode",
+              "vscode/claude-code-overview",
               "vscode/basics"
             ]
           },
