@@ -1,0 +1,58 @@
+---
+title: "安装与登录"
+description: "从扩展市场安装 Claude Code 插件并完成登录验证"
+---
+
+## 从扩展市场安装
+
+<Steps>
+  <Step title="打开扩展市场">
+    点击左侧边栏的**四个小方块图标**（Extensions），或使用快捷键：
+    - **Mac**：`Cmd + Shift + X`
+    - **Windows**：`Ctrl + Shift + X`
+  </Step>
+  <Step title="搜索插件">
+    在搜索框输入 **Claude Code**
+  </Step>
+  <Step title="认准官方插件">
+    找到 **Anthropic** 发布的官方插件（注意认准发布者名称，避免安装第三方仿冒插件）
+  </Step>
+  <Step title="点击安装">
+    点击 **Install**（安装），等待安装完成
+  </Step>
+</Steps>
+
+## 登录与验证
+
+安装完成后，需要登录你的 Claude 账号：
+
+<Steps>
+  <Step title="打开 Claude 面板">
+    侧边栏会出现一个 **Claude 图标**（星形图标），点击打开对话面板。
+
+    如果面板没出现，可以打开命令面板（`Cmd+Shift+P` / `Ctrl+Shift+P`），输入 "Claude Code"，选择 **Open in New Tab** 或 **Open in Sidebar**。
+  </Step>
+  <Step title="登录账号">
+    首次使用会提示登录——点击 `Sign in`，按提示在弹出的浏览器页面完成授权。
+  </Step>
+  <Step title="测试连接">
+    回到 VS Code，发一条测试消息（比如"你好"），收到回复说明安装成功。
+  </Step>
+</Steps>
+
+<Tip>
+  底部状态栏也会出现 "Claude Code" 字样，点击它同样可以打开对话面板。
+</Tip>
+
+## 安装验证清单
+
+确认以下几项都没问题：
+
+| 检查项 | 预期结果 |
+|--------|---------|
+| 侧边栏有 Claude 图标 | 能看到星形图标 |
+| 点击图标后出现对话面板 | 面板显示输入框 |
+| 发送"你好"能收到回复 | Claude 正常回复中文 |
+| 底部状态栏有 Claude Code | 显示连接状态 |
+
+如果以上任何一项不正常，请参考[常见问题排查](/claude-code/troubleshooting)。

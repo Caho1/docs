@@ -1,0 +1,64 @@
+---
+title: "常见问题排查"
+description: "使用 Claude Code 插件时遇到问题的解决方法"
+---
+
+## 常见问题与解决方法
+
+<AccordionGroup>
+  <Accordion title="我打开的是文件，不是文件夹">
+    **表现**：左侧看不到文件树，只有一个文件标签。
+
+    **解决**：菜单 `File` → `Open Folder...` 重新打开整个文件夹。
+
+    记住：一定要打开**文件夹**而不是单个文件，这样 Claude 才能看到你项目中的所有文件。
+  </Accordion>
+
+  <Accordion title="找不到文件在哪">
+    **解决方法**：
+
+    - **方法一**：用快捷键 `Cmd+P`（Mac）/ `Ctrl+P`（Windows），输入文件名搜索
+    - **方法二**：直接问 Claude："帮我找一下项目里和 XX 相关的文件"
+    - **方法三**：在左侧文件树里逐层展开查找
+  </Accordion>
+
+  <Accordion title="Claude 对话面板不见了">
+    三种方法找回来：
+
+    1. 点击侧边栏的 Claude 图标（星形图标）
+    2. 底部状态栏点击 "Claude Code"
+    3. 命令面板（`Cmd+Shift+P` / `Ctrl+Shift+P`）输入 "Claude Code: Open in Sidebar"
+  </Accordion>
+
+  <Accordion title="改了内容但不知道怎么保存">
+    - **Mac**：`Cmd + S`
+    - **Windows**：`Ctrl + S`
+
+    保存后可以让 Claude 帮你检查："帮我确认刚才的改动有没有问题"。
+
+    如果文件标签上有一个**圆点**（而不是 X），说明文件有未保存的修改。
+  </Accordion>
+
+  <Accordion title="Claude 没有反应 / 报错了">
+    依次尝试以下方法：
+
+    1. **检查网络连接**：确保你的电脑能正常上网
+    2. **开启新对话**：有时候当前对话可能卡住了，开一个新的对话试试
+    3. **重启 VS Code**：关闭 VS Code 再重新打开
+    4. **请技术同学协助**：如果持续有问题，可以让技术同学帮忙查看更详细的错误信息
+  </Accordion>
+
+  <Accordion title="Claude 的回答全是英文">
+    在对话框里加上语言要求即可：
+
+    ```
+    请用中文回答：[你的问题]
+    ```
+
+    或者在第一次对话时先说一句："请始终用中文回答我的问题"，后续的对话 Claude 就会默认用中文了。
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  遇到解决不了的问题，最简单的方法就是**开一个新对话**重新开始。大多数问题都可以通过重新开始来解决。
+</Tip>
