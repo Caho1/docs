@@ -1,68 +1,85 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "AI 办公助手教程",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#2563EB",
+    "light": "#3B82F6",
+    "dark": "#1D4ED8"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "课程讲义",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "开始之前",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "preparation"
             ]
           },
           {
-            "group": "Customization",
+            "group": "1. 认识 VS Code",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "vscode/why-vscode",
+              "vscode/basics"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "2. Claude Code 插件",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "claude-code/install",
+              "claude-code/core-usage",
+              "claude-code/troubleshooting"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "3. 业务场景实战",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+              "scenarios/read-docs",
+              "scenarios/write-docs",
+              "scenarios/check-docs",
+              "scenarios/rewrite",
+              "scenarios/data-analysis"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "4. 提问技巧",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "prompting/rhythm",
+              "prompting/principles",
+              "prompting/templates"
+            ]
+          },
+          {
+            "group": "5. Agent Skills",
+            "pages": [
+              "skills/overview",
+              "skills/create",
+              "skills/examples"
+            ]
+          },
+          {
+            "group": "6. 进阶了解",
+            "pages": [
+              "advanced/claude-md",
+              "advanced/collaboration"
+            ]
+          },
+          {
+            "group": "7. 练习与答疑",
+            "pages": [
+              "practice/exercises",
+              "practice/faq"
+            ]
+          },
+          {
+            "group": "附录",
+            "pages": [
+              "appendix/shortcuts",
+              "appendix/demo-folder"
             ]
           }
         ]
@@ -71,14 +88,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Claude Code 官方文档",
+          "href": "https://code.claude.com/docs/zh-CN/overview",
           "icon": "book-open-cover"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Agent Skills 文档",
+          "href": "https://platform.claude.com/docs/zh-CN/agents-and-tools/agent-skills/overview",
+          "icon": "puzzle-piece"
         }
       ]
     }
@@ -90,33 +107,12 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Claude Code",
+        "href": "https://code.claude.com"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+    ]
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "socials": {}
   }
 }

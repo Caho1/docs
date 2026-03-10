@@ -1,0 +1,69 @@
+---
+title: "常见问题 FAQ"
+description: "关于 Claude Code 使用的常见问题解答"
+---
+
+<AccordionGroup>
+  <Accordion title="Claude Code 和 claude.ai 的回答质量有区别吗？">
+    底层模型是一样的。区别在于 Claude Code 能直接读取你的文件、理解项目上下文，所以在处理具体文件时回答更准确。
+
+    简单来说：同样的"大脑"，但 Claude Code 给它提供了更多"眼睛"——它能看到你的文件，不需要你复制粘贴。
+  </Accordion>
+
+  <Accordion title="Claude Code 会不会把我的文件传到外部？">
+    Claude Code 处理你的代码和文件是为了提供帮助，但不会用于模型训练。具体的数据隐私政策请参考公司 IT 部门的说明。
+
+    如果你处理的是敏感文件，建议提前和 IT 部门确认合规要求。
+  </Accordion>
+
+  <Accordion title="一次能处理多大的文件？">
+    Claude 有上下文窗口限制（目前最大支持约 100 万 token，相当于大约几百页文档）。一般的文档、表格都没有问题。
+
+    如果文件特别大，可以：
+    - 让 Claude 分段处理："先读前 100 行，分析完再读后面的"
+    - 用 @ 引用特定部分而不是整个文件
+  </Accordion>
+
+  <Accordion title="修改文件后可以撤销吗？">
+    可以，有多种方式：
+
+    1. **撤销快捷键**：`Cmd+Z`（Mac）/ `Ctrl+Z`（Windows）
+    2. **拒绝修改**：如果你还没接受 Claude 的修改（在 Diff 视图中），点 Reject 就不会有任何改动
+    3. **多次撤销**：连续按撤销快捷键可以回退多步操作
+  </Accordion>
+
+  <Accordion title="我能把 Skill 的 SOP 写得很详细吗？比如写 500 行？">
+    不建议。Skill 文件会消耗 Claude 的上下文空间。
+
+    **官方建议**：
+    - 核心指令（SKILL.md）控制在 **200 行以内**
+    - 详细的参考资料放在 `references/` 目录下
+    - Claude 只在需要时才读取参考资料，不会浪费上下文空间
+  </Accordion>
+
+  <Accordion title="Claude 给的建议我不太确定对不对，怎么办？">
+    这是一个很好的习惯——对 AI 的建议保持审慎态度。
+
+    你可以：
+    1. **让它解释**："你为什么建议这样改？有什么依据？"
+    2. **让它自查**："帮我检查一下你刚才的建议有没有问题"
+    3. **自己判断**：如果涉及重要决策，始终以你的判断为准
+
+    **记住：Claude 是助手，不是决策者。**
+  </Accordion>
+
+  <Accordion title="为什么有时候 Claude 的回答不太稳定？">
+    AI 模型的回答本身存在一定随机性，同样的问题可能给出略有不同的答案。
+
+    提高稳定性的方法：
+    - 提问时**约束越具体越好**（参考[提问三原则](/prompting/principles)）
+    - 使用**固定的话术模板**（参考[话术模板](/prompting/templates)）
+    - 将常用的规则做成 **Skill**（参考[Agent Skills](/skills/overview)），让规则自动生效
+  </Accordion>
+
+  <Accordion title="多个人可以同时使用同一个项目的 Claude Code 吗？">
+    每个人在自己的 VS Code 里使用 Claude Code，互不干扰。
+
+    如果团队需要共享 Skill 或 CLAUDE.md 规则，可以把这些文件放在共享的项目文件夹里，技术同学会帮忙配置。
+  </Accordion>
+</AccordionGroup>
